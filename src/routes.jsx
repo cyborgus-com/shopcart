@@ -1,14 +1,17 @@
 import React from 'react';
-import Home from "./Home";
-import Shop from "./Shop";
-import Cart from "./Cart";
-import ErrorPage from "./ErrorPage";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import Cart from "./pages/Cart";
+import ErrorPage from "./pages/ErrorPage";
 
 const routes = [
-  {
+{
+  element: <Layout />,
+  errorElement: <ErrorPage />,
+  chldren: [  {
     path: "/",
     element: <Home />,
-    errorElement: <ErrorPage />,
   },
   {
     path: "/shop",
@@ -17,7 +20,8 @@ const routes = [
   {
     path: "/cart",
     element: <Cart />,
-  },
+  }
+]}
 ];
 
 export default routes;
