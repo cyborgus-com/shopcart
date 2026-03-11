@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import {CartContext} from '../context/CartContext.jsx';
 import useProducts from "../hooks/useProducts.jsx";
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
@@ -7,6 +8,7 @@ import TextField from '@mui/material/TextField';
 function Shop() {
     const {products, loading, error} = useProducts();
     const [amounts, setAmounts] = useState({});
+    const {addToCart} = useContext(CartContext);
 
     if(loading) {
       return (
@@ -64,7 +66,13 @@ function Shop() {
               </Button>
 
             </div>
-            <Button fullWidth variant="outlined">Add to Cart</Button>
+            <Button 
+              fullWidth 
+              variant="outlined"
+              onClick={() => addToCart(product, amounts[product.id] || 1)}
+            >
+              Add to Cart
+            </Button>
           </div>
 
         </div>
