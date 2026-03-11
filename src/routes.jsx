@@ -9,7 +9,7 @@ const routes = [
 {
   element: <Layout />,
   errorElement: <ErrorPage />,
-  chldren: [  {
+  children: [  {
     path: "/",
     element: <Home />,
   },

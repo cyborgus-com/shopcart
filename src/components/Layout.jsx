@@ -1,10 +1,10 @@
 import React from 'react';
 import {Outlet} from 'react-router-dom';
-import Header from '/components/Header.jsx';
+import Header from './Header.jsx';
 
 function Layout() {
     return (
-        <div className="app=layout">
+        <div className="app-layout">
             <Header />
             <main className="main-content">
                 <Outlet />
